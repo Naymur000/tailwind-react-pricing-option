@@ -1,5 +1,6 @@
-import React from "react";
+import { Menu } from "lucide-react";
 import Link from "./Link";
+
 
 const NavBar = () => {
   const navLinks = [
@@ -31,25 +32,17 @@ const NavBar = () => {
   ];
 
   return (
-    <nav>
+    <nav className="flex justify-between mx-10">
+      <Menu></Menu>
+      <h1>My Navbar</h1>
 
-        <ul className="flex">
-            {
-                navLinks.map(route => <Link route={route}></Link>)
-            }   
-        </ul>
-
-      {/* <ul className="flex">
-        <li className="mr-10">
-          <a href="/">Home</a>
-        </li>
-        <li className="mr-10">
-          <a href="/about">About</a>
-        </li>
-        <li className="mr-10">
-          <a href="/blog">Blog</a>
-        </li>
-      </ul> */}
+      <ul className="flex">
+        {navLinks.map((route) => (
+          <Link route={route}></Link>
+        ))}
+      </ul>
+      
+      <button>Sign in</button>
     </nav>
   );
 };
