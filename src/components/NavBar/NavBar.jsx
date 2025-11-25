@@ -32,27 +32,34 @@ const navLinks = [
 
 const links = navLinks.map((route) => <Link key={route.id} route={route} />);
 
+
+
 const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between mx-10">
-      <span className="flex" onClick={()=> setOpen(!open)} >
-        
-        <ul>
-          {
-            links
-          }
+    <nav className="flex justify-between max-w-7xl mx-7 mt-4">
+      <span className="flex">
+        <span onClick={() => setOpen(!open)}>
+          {open ? (
+            <X className="md:hidden"></X>
+          ) : (
+            <Menu className="md:hidden"></Menu>
+          )}
+        </span>
+
+        <ul
+          className={`md:hidden absolute bg-yellow-500 text-black ${
+            open ? "top-10" : "-top-40"
+          } duration-1000 rounded-sm`}
+        >
+          {links}
         </ul>
 
-        <h1>My Navbar</h1>
+        <h1 className="ml-3">My Navbar</h1>
       </span>
 
-      <ul className="flex">
-        {
-          links
-        }
-      </ul>
+      <ul className="md:flex hidden">{links}</ul>
 
       <h1>Sign In</h1>
     </nav>
