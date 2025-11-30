@@ -4,6 +4,9 @@ import DaisyNav from "./components/DaisyNav/DaisyNav";
 import NavBar from "./components/NavBar/NavBar";
 import PricingOptions from "./PricingOptions/PricingOptions";
 
+const pricingPromise = fetch('/public/pricingdata.json').then(res => res.json())
+
+
 function App() {
   return (
     <>
@@ -14,11 +17,9 @@ function App() {
       </header>
 
       <main>
-        {/* <Suspense>
-          <PricingOptions>
-            
-          </PricingOptions>
-        </Suspense> */}
+        <Suspense fallback={<span className="loading loading-spinner loading-md"></span>}>
+          <PricingOptions pricingPromise={pricingPromise}></PricingOptions>
+        </Suspense>
       </main>
     </>
   );
