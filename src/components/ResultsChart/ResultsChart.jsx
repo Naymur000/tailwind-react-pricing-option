@@ -3,7 +3,7 @@
 import { use } from 'react';
 import { Line, LineChart, XAxis, YAxis } from 'recharts';
 
-const ResultsChart = () => {
+const ResultsChart = ({result}) => {
 
     // const [resultData, setResultData] = useState([]);
 
@@ -12,13 +12,9 @@ const ResultsChart = () => {
     //     .then(res => res.json())
     //     .then(data => setResultData(data))
     // },[])
-
-
-    const result = fetch("/public/ResultsChart.json")
-                        .then(res => res.json())
                         
     const resultData = use(result)
-    console.log(resultData)
+
 
     return (
         <div>

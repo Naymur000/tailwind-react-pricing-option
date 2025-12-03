@@ -6,7 +6,7 @@ import PricingOptions from "./PricingOptions/PricingOptions";
 import ResultsChart from "./components/ResultsChart/ResultsChart";
 
 const pricingPromise = fetch('/public/pricingdata.json').then(res => res.json())
-
+const result = fetch("/public/ResultsChart.json").then(res => res.json())
 
 function App() {
   return (
@@ -20,9 +20,10 @@ function App() {
       <main>
         <Suspense fallback={<span className="loading loading-spinner loading-md"></span>}>
           <PricingOptions pricingPromise={pricingPromise}></PricingOptions>
+          <ResultsChart result={result}></ResultsChart>
         </Suspense>
 
-        <ResultsChart></ResultsChart>
+        
       </main>
     </>
   );
