@@ -23,6 +23,7 @@ function App() {
           <ResultsChart result={result}></ResultsChart>
         </Suspense>
 
+        <h1> Hello </h1>
         
       </main>
     </>
