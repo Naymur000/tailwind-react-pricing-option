@@ -14,7 +14,7 @@ const ResultsChart = ({result}) => {
     // },[])
                         
     const resultData = use(result)
-
+    console.log(result)
 
     return (
         <div>
