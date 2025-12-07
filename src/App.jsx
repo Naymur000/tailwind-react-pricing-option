@@ -40,6 +40,7 @@ function App() {
         >
           <MarksChart marksPromise={marksPromise}></MarksChart>
         </Suspense>
+        <h1>hello</h1>
       </main>
     </>
   );
