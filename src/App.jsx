@@ -40,8 +40,9 @@ function App() {
         >
           <MarksChart marksPromise={marksPromise}></MarksChart>
         </Suspense>
-        
       </main>
+
+      <h>Hello</h>
     </>
   );
 }
